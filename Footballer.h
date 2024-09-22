@@ -1,14 +1,14 @@
 #pragma once
+#include <string>
 
 #include "Sportsman.h"
 
 class Footballer : Sportsman
 {
 public:
-	/*void AddFootballer() : Sportsman::AddSportsman;*/
+
 
 private:
-	string position;
+	std::string position;
 	int number;
-	
 };

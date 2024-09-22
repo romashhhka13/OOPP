@@ -6,13 +6,13 @@
 
 
 template <typename T>
-T GetCorrectNumber(T min, T max, std::istream& in = std::cin)
+T GetCorrectNumber(T min, T max)
 {
     T x;
-    while ((in >> x).fail() || in.peek() != '\n' || x < min || x > max)
+    while ((std::cin >> x).fail() || std::cin.peek() != '\n' || x < min || x > max)
     {
-        in.clear();
-        in.ignore(10000, '\n');
+        std::cin.clear();
+        std::cin.ignore(10000, '\n');
         std::cout << std::format("¬ведите коректное число ({} - {}): ", min, max);
     }
     return x;

@@ -7,7 +7,7 @@ using namespace std;
 void SportsmansGroup::AddSportsman(){
 	cout << endl << "***Введите информацию о спортсмене***" << endl;
 	shared_ptr<Sportsman> s = make_shared<Sportsman>();
-	cin >> *s;
+	s->Input();
 	group.push_back(s);
 }
 
@@ -15,8 +15,8 @@ void SportsmansGroup::ShowSportsmans()
 {
 	cout << endl << "***Спортсмены***" << endl;
 	if (ObjectsExist(group)) {
-		for (const auto& s: group)
-			cout << *s;
+		for (const auto& s : group)
+			s->Output();
 	}
 	else
 		cout << "Спортсмены не найдены!" << endl;
@@ -69,9 +69,4 @@ void SportsmansGroup::Clear()
 	Sportsman::ResetMaxID();
 	group.clear();
 }
-
-SportsmansGroup::~SportsmansGroup(){
-	Clear();
-}
-
 

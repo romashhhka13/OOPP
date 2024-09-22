@@ -15,9 +15,6 @@ public:
 	void Load();
 	void Clear();
 
-	~SportsmansGroup();
-
 private:
 	std::vector<std::shared_ptr<Sportsman>> group;
-
 };
