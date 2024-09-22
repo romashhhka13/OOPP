@@ -25,7 +25,9 @@ private:
 	std::string name;
 	int id;
 	int age;
-	int weight;
+	int height;
 	static int max_id;
 };
+
+
 

@@ -6,7 +6,7 @@ using namespace std;
 
 void SportsmansGroup::AddSportsman(){
 	cout << endl << "***¬ведите информацию о спортсмене***" << endl;
-	Sportsman* s = new Sportsman;
+	shared_ptr<Sportsman> s = make_shared<Sportsman>();
 	cin >> *s;
 	group.push_back(s);
 }
@@ -53,7 +53,7 @@ void SportsmansGroup::Load()
 		
 		fin >> num_s;
 		for (int i = 0; i < num_s; i++) {
-			Sportsman* s = new Sportsman;
+			shared_ptr<Sportsman> s = make_shared<Sportsman>();
 			fin >> *s;
 			group.push_back(s);
 		}
@@ -67,8 +67,6 @@ void SportsmansGroup::Load()
 void SportsmansGroup::Clear()
 {
 	Sportsman::ResetMaxID();
-	for (auto s : group)
-		delete s;
 	group.clear();
 }
 

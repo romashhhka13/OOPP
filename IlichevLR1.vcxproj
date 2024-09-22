@@ -135,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Addition.h" />
+    <ClInclude Include="Footballer.h" />
     <ClInclude Include="Sportsman.h" />
     <ClInclude Include="SportsmansGroup.h" />
   </ItemGroup>

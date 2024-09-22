@@ -1,6 +1,8 @@
 #pragma once
 #include <unordered_map>
 #include <string>
+#include <memory>
+#include <vector>
 
 #include "Sportsman.h"
 
@@ -16,6 +18,6 @@ public:
 	~SportsmansGroup();
 
 private:
-	std::vector<Sportsman*> group;
+	std::vector<std::shared_ptr<Sportsman>> group;
 
 };

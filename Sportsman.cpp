@@ -17,8 +17,8 @@ istream& operator>>(istream& in, Sportsman& s){
     cout << "Возраст: ";
     s.age = GetCorrectNumber(1, 100, in);
 
-    cout << "Вес: ";
-    s.weight = GetCorrectNumber(1, 300, in);
+    cout << "Рост: ";
+    s.height = GetCorrectNumber(1, 300, in);
 
     return in;
 }
@@ -29,7 +29,7 @@ ostream& operator<<(ostream& out, const Sportsman& s){
         << symbol << "Фамилия: " << s.surname << endl
         << symbol << "Имя: " << s.name << endl
         << symbol << "Возраст: " << s.age << endl
-        << symbol << "Вес спортмена: " << s.weight << endl;
+        << symbol << "Рост спортмена: " << s.height << endl;
 
     return out;
 }
@@ -40,7 +40,7 @@ ifstream& operator>>(std::ifstream& fin, Sportsman& s)
     getline(fin >> ws, s.surname);
     getline(fin >> ws, s.name);
     fin >> s.age;
-    fin >> s.weight;
+    fin >> s.height;
 
     if (s.id >= s.max_id)
         s.max_id = s.id + 1;
@@ -53,7 +53,7 @@ std::ofstream& operator<<(std::ofstream& fout, const Sportsman& s){
         << s.surname << endl
         << s.name << endl
         << s.age << endl
-        << s.weight << endl;
+        << s.height << endl;
 
     return fout;
 }
