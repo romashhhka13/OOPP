@@ -4,7 +4,7 @@
 using namespace std;
 
 
-int ChooseActionMenu(std::vector<std::string>& menu, bool with_exit)
+int ChooseActionMenu(std::vector<std::string>& menu, bool with_exit, string action_text)
 {
 	if (menu.size() < 1)
 		return -1;
@@ -15,7 +15,6 @@ int ChooseActionMenu(std::vector<std::string>& menu, bool with_exit)
 	if (with_exit)
 		cout << "0. Выход\n";
 
-	cout << "Выберете действие: ";
-
-	return GetCorrectNumber<int>(0, menu.size());
+	cout << action_text;
+	return with_exit ? GetCorrectNumber<int>(0, menu.size()) : GetCorrectNumber<int>(1, menu.size());
 }

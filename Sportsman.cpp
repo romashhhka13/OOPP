@@ -58,12 +58,12 @@ std::ofstream& operator<<(std::ofstream& fout, const Sportsman& s){
     return fout;
 }
 
-int Sportsman::GetID(){
-    return id;
+void Sportsman::ResetMaxID() {
+    max_id = 1;
 }
 
-void Sportsman::ResetMaxID(){
-    max_id = 1;
+int Sportsman::GetID() const{
+    return id;
 }
 
 void Sportsman::Input()
@@ -79,11 +79,9 @@ void Sportsman::Input()
 
     cout << "Рост: ";
     height = GetCorrectNumber(1, 300);
-
-    //return in;
 }
 
-void Sportsman::Output()
+void Sportsman::Output() const
 {
     char symbol = 149; // marker
     cout << "Информация о спортмене #" << id << endl
@@ -91,8 +89,6 @@ void Sportsman::Output()
         << symbol << "Имя: " << name << endl
         << symbol << "Возраст: " << age << endl
         << symbol << "Рост спортмена: " << height << endl;
-
-    //return out;
 }
 
 Sportsman::Sportsman(){

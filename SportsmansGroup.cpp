@@ -5,68 +5,52 @@ using namespace std;
 
 
 void SportsmansGroup::AddSportsman(){
-	cout << endl << "***Введите информацию о спортсмене***" << endl;
 	shared_ptr<Sportsman> s = make_shared<Sportsman>();
 	s->Input();
 	group.push_back(s);
 }
 
-void SportsmansGroup::ShowSportsmans()
+void SportsmansGroup::AddFootballer()
 {
-	cout << endl << "***Спортсмены***" << endl;
-	if (ObjectsExist(group)) {
-		for (const auto& s : group)
-			s->Output();
-	}
-	else
-		cout << "Спортсмены не найдены!" << endl;
+	shared_ptr<Footballer> f = make_shared<Footballer>();
+	f->Input();
+	group.push_back(f);
 }
 
-void SportsmansGroup::Save()
+void SportsmansGroup::ShowSportsmans() const
 {
-	string file_name;
-	cout << endl << "Введите название файла: ";
-	getline(cin >> ws, file_name);
-		
-	ofstream fout(".data/" + file_name + ".txt");
-		
-	if (fout) {
-		fout << group.size() << endl;
-		for (const auto& s : group)
-			fout << *s;
-		cout << "Данные успешно сохранены!" << endl;
-	}
-	else
-		cout << "Не удалось открыть файл!" << endl;
+	for (const auto& s : group)
+		s->Output();
 }
 
-void SportsmansGroup::Load()
+void SportsmansGroup::Save(ofstream& fout) const
 {
-	string file_name;
-	cout << endl << "Введите название файла: ";
-	getline(cin >> ws, file_name);
-	
-	ifstream fin(".data/" + file_name + ".txt");
-	if (fin) {
-		int num_s;
-		Clear();
+	for (const auto& s : group)
+		fout << *s;
+}
+
+void SportsmansGroup::Load(ifstream& fin)
+{
+	int num_s;
+	Clear();
 		
-		fin >> num_s;
-		for (int i = 0; i < num_s; i++) {
-			shared_ptr<Sportsman> s = make_shared<Sportsman>();
-			fin >> *s;
-			group.push_back(s);
-		}
-	
-		cout << "Данные успешно считаны!" << endl;
+	fin >> num_s;
+	for (int i = 0; i < num_s; i++) {
+		shared_ptr<Sportsman> s = make_shared<Sportsman>();
+		fin >> *s;
+		group.push_back(s);
 	}
-	else
-		cout << "Не удалось открыть файл!" << endl;
+
 }
 
 void SportsmansGroup::Clear()
 {
 	Sportsman::ResetMaxID();
 	group.clear();
+}
+
+bool SportsmansGroup::ObjectExist() const
+{
+	return !group.empty();
 }
 

@@ -10,17 +10,16 @@ class Sportsman
 {
 public:
 	
-	int GetID();
 	static void ResetMaxID();
-	void Input();
-	void Output();
+	int GetID() const;
+	virtual void Input();
+	virtual void Output() const;
 
+	Sportsman();
 	/*friend std::istream& operator >> (std::istream& in, Sportsman& s);
 	friend std::ostream& operator << (std::ostream& out, const Sportsman& s);*/
 	friend std::ifstream& operator >> (std::ifstream& fin, Sportsman& s);
 	friend std::ofstream& operator << (std::ofstream& fout, const Sportsman& s);
-
-	Sportsman();
 
 private:
 	std::string surname;

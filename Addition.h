@@ -18,13 +18,6 @@ T GetCorrectNumber(T min, T max)
     return x;
 }
 
-template <typename T>
-bool ObjectsExist(const T& objects)
-{
-    if (objects.size() == 0) {
-        return false;
-    }
-    return true;
-}
 
-int ChooseActionMenu(std::vector<std::string>& menu, bool with_exit);
+int ChooseActionMenu(std::vector<std::string>& menu, bool with_exit = true,
+    std::string action_text = "Выберете действие: ");

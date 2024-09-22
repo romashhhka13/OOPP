@@ -8,6 +8,7 @@
 #include "Sportsman.h"
 #include "SportsmansGroup.h"
 #include "Footballer.h"
+#include "Menu.h"
 
 
 using namespace std;
@@ -26,37 +27,48 @@ int main()
 
     while (1)
     {
-        switch (ChooseActionMenu(menu, true))
+        switch (ChooseActionMenu(menu))
         {
         case 1:
         {
-            SportsSchool.AddSportsman();
+            MenuAddSportsman(SportsSchool);
             break;
         }
         case 2:
         {
-            /*Footballer f_player;
-            f_player.GetID();*/
+            /*Sportsman* s = new Sportsman;
+            s->Input();
+            s->Output();
+
+            Footballer* f = new Footballer;
+            f->Input();
+            f->Output();
+
+        
+            cout << s->GetID();
+            s = f;
+            s->Input();*/
+            MenuAddFootballer(SportsSchool);
             break;
         }
         case 3:
         {
-            SportsSchool.ShowSportsmans();
+            MenuShowSportsmans(SportsSchool);
             break;
         }
         case 4:
         {
-            SportsSchool.Save();
+            MenuSave(SportsSchool);
             break;
         }
         case 5:
         {
-            SportsSchool.Load();
+            MenuLoad(SportsSchool);
             break;
         }
         case 6:
         {
-            SportsSchool.Clear();
+            MenuClear(SportsSchool);
             break;
         }
         case 0:
