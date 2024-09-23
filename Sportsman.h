@@ -22,6 +22,19 @@ public:
 	friend std::ofstream& operator << (std::ofstream& fout, const Sportsman& s);
 
 private:
+
+	friend class boost::serialization::access;
+
+	template<class Archive>
+	void serialize(Archive& ar, const unsigned int version) {
+		ar& id;
+		ar& surname;
+		ar& name;
+		ar& age;
+		ar& height;
+	}
+
+
 	std::string surname;
 	std::string name;
 	int id;
@@ -30,5 +43,5 @@ private:
 	static int max_id;
 };
 
-
+//BOOST_CLASS_EXPORT(Sportsman)
 

@@ -4,6 +4,10 @@
 using namespace std;
 
 
+BOOST_CLASS_VERSION(Footballer, 1)
+BOOST_CLASS_EXPORT(Footballer)
+
+
 void Footballer::Input()
 {
 	Sportsman::Input();
@@ -12,7 +16,7 @@ void Footballer::Input()
 
 	vector<string> positions = { "Вратарь", "Левый защитник",
 		"Правый защитник", "Центральный защитник", "Правый полузащитник",
-		"Левыйполузащитник", "Опорный полузащитник", "Левый нападающий",
+		"Левый полузащитник", "Опорный полузащитник", "Левый нападающий",
 		"Правый нападающий", "Центральный нападающий" };
 	position = positions[ChooseActionMenu(positions, false, "Позиция игрока на поле: ") - 1];
 }

@@ -7,6 +7,9 @@ using namespace std;
 int Sportsman::max_id = 1;
 
 
+BOOST_CLASS_VERSION(Sportsman, 1)
+
+
 //istream& operator>>(istream& in, Sportsman& s){
 //    cout << "Фамилия: ";
 //    getline(in >> ws, s.surname);

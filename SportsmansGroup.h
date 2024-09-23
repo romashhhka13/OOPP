@@ -6,6 +6,7 @@
 
 #include "Sportsman.h"
 #include "Footballer.h"
+#include "Addition.h"
 
 class SportsmansGroup
 {
@@ -19,5 +20,13 @@ public:
 	bool ObjectExist() const;
 
 private:
+	friend class boost::serialization::access;
+	template <class Archive>
+	void serialize(Archive& ar, const unsigned int version)
+	{
+		ar& group;
+	}
+
 	std::vector<std::shared_ptr<Sportsman>> group;
 };
+
