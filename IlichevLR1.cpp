@@ -20,21 +20,6 @@ int main()
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
-
-    /*Sportsman s;
-    s.Input();
-
-    ofstream fout(".data/test.txt");
-    text_oarchive oa(fout);
-    oa << s;*/
-
-    /*ifstream fin(".data/test.txt");
-    text_iarchive ia(fin);
-    ia >> s;*/
-
-    //s.Output();
-
-
     vector<string> menu = { "Добавить спорстмена", "Добавить футболиста",
         "Показать всех спортсменов", "Сохранить в файл",
         "Загрузить из файла", "Очистить" };

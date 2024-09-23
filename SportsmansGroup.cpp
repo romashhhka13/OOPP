@@ -33,30 +33,14 @@ void SportsmansGroup::Save(ofstream& fout) const
 {
 	text_oarchive oa(fout);
 	oa << *this;
-	/*for (const auto& s : group)
-		oa << *s;*/
 }
 
 
-void SportsmansGroup::Load(ifstream& fin)
-{
-	//int num_s;
-	//Clear();
-	//	
-	//fin >> num_s;
-	//for (int i = 0; i < num_s; i++) {
-	//	shared_ptr<Sportsman> s = make_shared<Sportsman>();
-	//	fin >> *s;
-	//	group.push_back(s);
-	//}
+void SportsmansGroup::Load(ifstream& fin){
+
+	this->Clear();
 	text_iarchive ia(fin);
 	ia >> *this;
-
-	//while (fin.peek() != EOF) {  // Пока файл не закончился
-	//	shared_ptr<Sportsman> s = make_shared<Sportsman>();
-	//	ia >> s;  // Загружаем объект через указатель
-	//	group.push_back(s);
-	//}
 }
 
 void SportsmansGroup::Clear()

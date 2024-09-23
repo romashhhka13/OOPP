@@ -9,34 +9,6 @@ int Sportsman::max_id = 1;
 
 BOOST_CLASS_VERSION(Sportsman, 1)
 
-
-//istream& operator>>(istream& in, Sportsman& s){
-//    cout << "Фамилия: ";
-//    getline(in >> ws, s.surname);
-//
-//    cout << "Имя: ";
-//    getline(in >> ws, s.name);
-//
-//    cout << "Возраст: ";
-//    s.age = GetCorrectNumber(1, 100, in);
-//
-//    cout << "Рост: ";
-//    s.height = GetCorrectNumber(1, 300, in);
-//
-//    return in;
-//}
-//
-//ostream& operator<<(ostream& out, const Sportsman& s){
-//    char symbol = 149; // marker
-//    out << "Информация о спортмене #" << s.id << endl
-//        << symbol << "Фамилия: " << s.surname << endl
-//        << symbol << "Имя: " << s.name << endl
-//        << symbol << "Возраст: " << s.age << endl
-//        << symbol << "Рост спортмена: " << s.height << endl;
-//
-//    return out;
-//}
-
 ifstream& operator>>(std::ifstream& fin, Sportsman& s)
 {
     fin >> s.id;
